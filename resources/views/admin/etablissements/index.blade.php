@@ -32,13 +32,7 @@
                             {{ trans('cruds.etablissement.fields.tel_1') }}
                         </th>
                         <th>
-                            {{ trans('cruds.etablissement.fields.tel_2') }}
-                        </th>
-                        <th>
                             {{ trans('cruds.etablissement.fields.email_professionel') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.etablissement.fields.email_personnel') }}
                         </th>
                         <th>
                             {{ trans('cruds.etablissement.fields.image') }}
@@ -73,13 +67,7 @@
                                 {{ $etablissement->tel_1 ?? '' }}
                             </td>
                             <td>
-                                {{ $etablissement->tel_2 ?? '' }}
-                            </td>
-                            <td>
                                 {{ $etablissement->email_professionel ?? '' }}
-                            </td>
-                            <td>
-                                {{ $etablissement->email_personnel ?? '' }}
                             </td>
                             <td>
                                 @if($etablissement->image)

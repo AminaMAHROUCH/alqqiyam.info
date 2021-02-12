@@ -49,6 +49,14 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.etablissement.fields.fix') }}
+                        </th>
+                        <td>
+                            {{ $etablissement->fix }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.etablissement.fields.email_professionel') }}
                         </th>
                         <td>

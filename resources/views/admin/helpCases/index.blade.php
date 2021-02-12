@@ -34,6 +34,9 @@
                         <th>
                             {{ trans('cruds.helpCase.fields.video') }}
                         </th>
+                         <th>
+                            {{ trans('cruds.news.fields.type') }}
+                        </th>
                         <th>
                             &nbsp;
                         </th>
@@ -60,6 +63,9 @@
                             </td>
                             <td>
                                 {{ $helpCase->video ?? '' }}
+                            </td>
+                            <td>
+                                {{ App\Models\HelpCase::TYPE_SELECT[$news->type] ?? '' }}
                             </td>
                             <td>
                                 @can('help_case_show')

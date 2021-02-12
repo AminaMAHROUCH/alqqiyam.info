@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 class AddRelationshipFieldsToUniteRegionalsTable extends Migration
-{
+{ 
     public function up()
     {
         Schema::table('unite_regionals', function (Blueprint $table) {
@@ -13,6 +13,8 @@ class AddRelationshipFieldsToUniteRegionalsTable extends Migration
             $table->foreign('region_id', 'region_fk_2900012')->references('id')->on('regions');
             $table->unsignedBigInteger('province_id')->nullable();
             $table->foreign('province_id', 'province_fk_2900013')->references('id')->on('provinces');
+             $table->unsignedBigInteger('profession_id')->nullable();
+            $table->foreign('profession_id', 'profession_fk_2900014')->references('id')->on('professions');
         });
     }
-}
+} 

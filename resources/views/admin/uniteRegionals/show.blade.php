@@ -49,6 +49,14 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.uniteRegional.fields.fix') }}
+                        </th>
+                        <td>
+                            {{ $uniteRegional->fix }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.uniteRegional.fields.email_profesionel') }}
                         </th>
                         <td>

@@ -34,6 +34,14 @@
                 <span class="help-block">{{ trans('cruds.uniteRegional.fields.tel_2_helper') }}</span>
             </div>
             <div class="form-group">
+                <label for="fix">{{ trans('cruds.uniteRegional.fields.fix') }}</label>
+                <input class="form-control {{ $errors->has('fix') ? 'is-invalid' : '' }}" type="text" name="fix" id="fix" value="{{ old('fix', '') }}">
+                @if($errors->has('fix'))
+                    <span class="text-danger">{{ $errors->first('fix') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.uniteRegional.fields.tel_2_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label class="required" for="email_profesionel">{{ trans('cruds.uniteRegional.fields.email_profesionel') }}</label>
                 <input class="form-control {{ $errors->has('email_profesionel') ? 'is-invalid' : '' }}" type="email" name="email_profesionel" id="email_profesionel" value="{{ old('email_profesionel') }}" required>
                 @if($errors->has('email_profesionel'))

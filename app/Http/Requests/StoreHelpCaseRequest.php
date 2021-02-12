@@ -28,6 +28,10 @@ class StoreHelpCaseRequest extends FormRequest
                 'string',
                 'nullable',
             ],
+            'type'       => [
+                'string',
+                'required',
+            ],
         ];
     }
 }

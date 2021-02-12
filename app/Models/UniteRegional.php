@@ -38,7 +38,7 @@ class UniteRegional extends Model implements HasMedia
         'password',
         'region_id',
         'province_id',
-        'profession',
+        'fix',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -76,5 +76,10 @@ class UniteRegional extends Model implements HasMedia
     public function province()
     {
         return $this->belongsTo(Province::class, 'province_id');
+    }
+
+    public function profession()
+    {
+        return $this->belongsTo(Profession::class, 'profession_id');
     }
 }

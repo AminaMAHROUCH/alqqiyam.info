@@ -13,6 +13,7 @@ class CreateHelpCasesTable extends Migration
             $table->string('title');
             $table->longText('description');
             $table->string('video')->nullable();
+            $table->string('type')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

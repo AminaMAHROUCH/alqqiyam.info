@@ -23,7 +23,7 @@ class UniteRegionalController extends Controller
     {
         abort_if(Gate::denies('unite_regional_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $uniteRegionals = UniteRegional::with(['region', 'province', 'media'])->get();
+        $uniteRegionals = UniteRegional::with(['region', 'province', 'profession', 'media'])->get();
 
         return view('admin.uniteRegionals.index', compact('uniteRegionals'));
     }
@@ -33,6 +33,8 @@ class UniteRegionalController extends Controller
         abort_if(Gate::denies('unite_regional_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $regions = Region::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+
+        $professions = Profession::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $provinces = Province::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -62,9 +64,11 @@ class UniteRegionalController extends Controller
 
         $provinces = Province::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $uniteRegional->load('region', 'province');
+        $professions = Profession::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.uniteRegionals.edit', compact('regions', 'provinces', 'uniteRegional'));
+        $uniteRegional->load('region', 'province', 'profession');
+
+        return view('admin.uniteRegionals.edit', compact('regions', 'provinces', 'professions', 'uniteRegional'));
     }
 
     public function update(UpdateUniteRegionalRequest $request, UniteRegional $uniteRegional)
@@ -90,7 +94,7 @@ class UniteRegionalController extends Controller
     {
         abort_if(Gate::denies('unite_regional_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $uniteRegional->load('region', 'province');
+        $uniteRegional->load('region', 'province', 'profession');
 
         return view('admin.uniteRegionals.show', compact('uniteRegional'));
     }

@@ -96,7 +96,7 @@
                             {{ trans('cruds.provincePartner.fields.province') }}
                         </th>
                         <td>
-                            {{ $provincePartner->province->name ?? '' }}
+                            {{ $provincePartner->region->name ?? '' }}
                         </td>
                     </tr>
                 </tbody>

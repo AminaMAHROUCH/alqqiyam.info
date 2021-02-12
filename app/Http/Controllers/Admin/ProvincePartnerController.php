@@ -7,7 +7,7 @@ use App\Http\Controllers\Traits\MediaUploadingTrait;
 use App\Http\Requests\MassDestroyProvincePartnerRequest;
 use App\Http\Requests\StoreProvincePartnerRequest;
 use App\Http\Requests\UpdateProvincePartnerRequest;
-use App\Models\Province;
+use App\Models\Region;
 use App\Models\ProvincePartner;
 use Gate;
 use Illuminate\Http\Request;
@@ -22,7 +22,7 @@ class ProvincePartnerController extends Controller
     {
         abort_if(Gate::denies('province_partner_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $provincePartners = ProvincePartner::with(['province', 'media'])->get();
+        $provincePartners = ProvincePartner::with(['region', 'media'])->get();
 
         return view('admin.provincePartners.index', compact('provincePartners'));
     }
@@ -31,9 +31,9 @@ class ProvincePartnerController extends Controller
     {
         abort_if(Gate::denies('province_partner_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $provinces = Province::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $regions = Region::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.provincePartners.create', compact('provinces'));
+        return view('admin.provincePartners.create', compact('regions'));
     }
 
     public function store(StoreProvincePartnerRequest $request)
@@ -55,11 +55,11 @@ class ProvincePartnerController extends Controller
     {
         abort_if(Gate::denies('province_partner_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $provinces = Province::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $regions = Region::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $provincePartner->load('province');
+        $provincePartner->load('region');
 
-        return view('admin.provincePartners.edit', compact('provinces', 'provincePartner'));
+        return view('admin.provincePartners.edit', compact('regions', 'provincePartner'));
     }
 
     public function update(UpdateProvincePartnerRequest $request, ProvincePartner $provincePartner)

@@ -59,6 +59,14 @@
                             {{ $helpCase->video }}
                         </td>
                     </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.news.fields.type') }}
+                        </th>
+                        <td>
+                            {{ App\Models\News::TYPE_SELECT[$news->type] ?? '' }}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <div class="form-group">

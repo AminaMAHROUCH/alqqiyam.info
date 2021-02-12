@@ -76,14 +76,15 @@
                 <span class="help-block">{{ trans('cruds.provincePartner.fields.tel_2_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="province_id">{{ trans('cruds.provincePartner.fields.province') }}</label>
-                <select class="form-control select2 {{ $errors->has('province') ? 'is-invalid' : '' }}" name="province_id" id="province_id" required>
-                    @foreach($provinces as $id => $province)
-                        <option value="{{ $id }}" {{ (old('province_id') ? old('province_id') : $provincePartner->province->id ?? '') == $id ? 'selected' : '' }}>{{ $province }}</option>
+                <label class="required" for="region_id">{{ trans('cruds.provincePartner.fields.region') }}</label>
+                <select class="form-control select2 {{ $errors->has('region') ? 'is-invalid' : '' }}" name="region_id" id="region_id" required>
+                    @foreach($regions as $id => $region)
+                        <option value="{{ $id }}" {{ (old('region_id') ? old('region_id') : $provincePartner->region
+                            ->id ?? '') == $id ? 'selected' : '' }}>{{ $region }}</option>
                     @endforeach
                 </select>
-                @if($errors->has('province'))
-                    <span class="text-danger">{{ $errors->first('province') }}</span>
+                @if($errors->has('region'))
+                    <span class="text-danger">{{ $errors->first('region') }}</span>
                 @endif
                 <span class="help-block">{{ trans('cruds.provincePartner.fields.province_helper') }}</span>
             </div>

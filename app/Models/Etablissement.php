@@ -31,6 +31,7 @@ class Etablissement extends Model implements HasMedia
         'tel_2',
         'email_professionel',
         'email_personnel',
+        'fix',
         'direction_id',
         'unite_id',
         'profession_id',

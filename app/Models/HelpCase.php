@@ -24,11 +24,16 @@ class HelpCase extends Model implements HasMedia
         'updated_at',
         'deleted_at',
     ];
+    const TYPE_SELECT = [
+        'article' => 'مقالة',
+        'cas'     => 'حالة',
+    ];
 
     protected $fillable = [
         'title',
         'description',
         'video',
+        'type',
         'created_at',
         'updated_at',
         'deleted_at',

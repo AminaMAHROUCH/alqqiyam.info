@@ -34,6 +34,14 @@
                 <span class="help-block">{{ trans('cruds.etablissement.fields.tel_2_helper') }}</span>
             </div>
             <div class="form-group">
+                <label for="fix">{{ trans('cruds.etablissement.fields.fix') }}</label>
+                <input class="form-control {{ $errors->has('fix') ? 'is-invalid' : '' }}" type="text" name="fix" id="fix" value="{{ old('fix', '') }}">
+                @if($errors->has('fix'))
+                    <span class="text-danger">{{ $errors->first('fix') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.etablissement.fields.tel_2_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label class="required" for="email_professionel">{{ trans('cruds.etablissement.fields.email_professionel') }}</label>
                 <input class="form-control {{ $errors->has('email_professionel') ? 'is-invalid' : '' }}" type="email" name="email_professionel" id="email_professionel" value="{{ old('email_professionel') }}" required>
                 @if($errors->has('email_professionel'))

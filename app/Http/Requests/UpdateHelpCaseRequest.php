@@ -28,6 +28,10 @@ class UpdateHelpCaseRequest extends FormRequest
                 'string',
                 'nullable',
             ],
+            'type'       => [
+                'string',
+                'required',
+            ],
         ];
     }
 }
