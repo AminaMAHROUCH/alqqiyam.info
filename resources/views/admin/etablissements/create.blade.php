@@ -43,7 +43,7 @@
             </div>
             <div class="form-group">
                 <label class="required" for="email_professionel">{{ trans('cruds.etablissement.fields.email_professionel') }}</label>
-                <input class="form-control {{ $errors->has('email_professionel') ? 'is-invalid' : '' }}" type="email" name="email_professionel" id="email_professionel" value="{{ old('email_professionel') }}" required>
+                <input class="form-control {{ $errors->has('email_professionel') ? 'is-invalid' : '' }}" type="email" name="email" id="email_professionel" value="{{ old('email_professionel') }}" required>
                 @if($errors->has('email_professionel'))
                     <span class="text-danger">{{ $errors->first('email_professionel') }}</span>
                 @endif
@@ -56,6 +56,14 @@
                     <span class="text-danger">{{ $errors->first('email_personnel') }}</span>
                 @endif
                 <span class="help-block">{{ trans('cruds.etablissement.fields.email_personnel_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label class="required" for="password">{{ trans('cruds.etablissement.fields.password') }}</label>
+                <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" type="password" name="password" id="password" value="{{ old('password') }}" required>
+                @if($errors->has('password'))
+                    <span class="text-danger">{{ $errors->first('password') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.etablissement.fields.email_professionel_helper') }}</span>
             </div>
             <div class="form-group">
                 <label class="required" for="image">{{ trans('cruds.etablissement.fields.image') }}</label>

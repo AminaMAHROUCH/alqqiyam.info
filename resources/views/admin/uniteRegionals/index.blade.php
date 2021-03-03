@@ -32,7 +32,7 @@
                             {{ trans('cruds.uniteRegional.fields.tel_1') }}
                         </th>
                         <th>
-                            {{ trans('cruds.uniteRegional.fields.email_profesionel') }}
+                            {{ trans('cruds.uniteRegional.fields.email') }}
                         </th>
                         <th>
                             {{ trans('cruds.uniteRegional.fields.image') }}
@@ -67,7 +67,7 @@
                                 {{ $uniteRegional->tel_1 ?? '' }}
                             </td>
                             <td>
-                                {{ $uniteRegional->email_profesionel ?? '' }}
+                                {{ $uniteRegional->email ?? '' }}
                             </td>
                             <td>
                                 @if($uniteRegional->image)

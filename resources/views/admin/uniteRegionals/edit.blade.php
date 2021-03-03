@@ -44,12 +44,12 @@
             </div>
 
             <div class="form-group">
-                <label class="required" for="email_profesionel">{{ trans('cruds.uniteRegional.fields.email_profesionel') }}</label>
-                <input class="form-control {{ $errors->has('email_profesionel') ? 'is-invalid' : '' }}" type="email" name="email_profesionel" id="email_profesionel" value="{{ old('email_profesionel', $uniteRegional->email_profesionel) }}" required>
-                @if($errors->has('email_profesionel'))
-                    <span class="text-danger">{{ $errors->first('email_profesionel') }}</span>
+                <label class="required" for="email">{{ trans('cruds.uniteRegional.fields.email') }}</label>
+                <input class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" type="email" name="email" id="email" value="{{ old('email', $uniteRegional->email) }}" required>
+                @if($errors->has('email'))
+                    <span class="text-danger">{{ $errors->first('email') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.uniteRegional.fields.email_profesionel_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.uniteRegional.fields.email_helper') }}</span>
             </div>
             <div class="form-group">
                 <label for="email_personnel">{{ trans('cruds.uniteRegional.fields.email_personnel') }}</label>

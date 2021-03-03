@@ -14,7 +14,7 @@ class CreateUniteRegionalsTable extends Migration
             $table->string('tel_1');
             $table->string('tel_2')->nullable();
             $table->string('fix')->nullable();
-            $table->string('email_profesionel')->unique();
+            $table->string('email')->unique();
             $table->string('email_personnel')->nullable();
             $table->string('password');
             $table->timestamps();

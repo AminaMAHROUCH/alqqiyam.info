@@ -29,9 +29,9 @@ class UpdateUniteRegionalRequest extends FormRequest
                 'string',
                 'nullable',
             ],
-            'email_profesionel' => [
+            'email' => [
                 'required',
-                'unique:unite_regionals,email_profesionel,' . request()->route('unite_regional')->id,
+                'unique:unite_regionals,email,' . request()->route('unite_regional')->id,
             ],
             'profession'        => [
                 'string',

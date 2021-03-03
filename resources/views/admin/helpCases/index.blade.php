@@ -65,7 +65,7 @@
                                 {{ $helpCase->video ?? '' }}
                             </td>
                             <td>
-                                {{ App\Models\HelpCase::TYPE_SELECT[$news->type] ?? '' }}
+                                {{ App\Models\HelpCase::TYPE_SELECT[$helpCase->type] ?? '' }}
                             </td>
                             <td>
                                 @can('help_case_show')

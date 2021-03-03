@@ -67,7 +67,7 @@
                                 {{ $etablissement->tel_1 ?? '' }}
                             </td>
                             <td>
-                                {{ $etablissement->email_professionel ?? '' }}
+                                {{ $etablissement->email ?? '' }}
                             </td>
                             <td>
                                 @if($etablissement->image)

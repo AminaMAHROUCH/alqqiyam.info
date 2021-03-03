@@ -43,7 +43,7 @@
             </div>
             <div class="form-group">
                 <label class="required" for="email_profesionel">{{ trans('cruds.uniteRegional.fields.email_profesionel') }}</label>
-                <input class="form-control {{ $errors->has('email_profesionel') ? 'is-invalid' : '' }}" type="email" name="email_profesionel" id="email_profesionel" value="{{ old('email_profesionel') }}" required>
+                <input class="form-control {{ $errors->has('email_profesionel') ? 'is-invalid' : '' }}" type="email" name="email" id="email_profesionel" value="{{ old('email_profesionel') }}" required>
                 @if($errors->has('email_profesionel'))
                     <span class="text-danger">{{ $errors->first('email_profesionel') }}</span>
                 @endif

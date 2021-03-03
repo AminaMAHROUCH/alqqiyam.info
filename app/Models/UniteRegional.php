@@ -2,16 +2,19 @@
 
 namespace App\Models;
 
+use App\Traits\HasToken;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
+use Illuminate\Support\Facades\Hash;
 use \DateTimeInterface;
 
 class UniteRegional extends Model implements HasMedia
 {
     use SoftDeletes, HasMediaTrait;
+    use HasToken;
 
     public $table = 'unite_regionals';
 
@@ -33,7 +36,7 @@ class UniteRegional extends Model implements HasMedia
         'name_complet',
         'tel_1',
         'tel_2',
-        'email_profesionel',
+        'email',
         'email_personnel',
         'password',
         'region_id',
@@ -81,5 +84,17 @@ class UniteRegional extends Model implements HasMedia
     public function profession()
     {
         return $this->belongsTo(Profession::class, 'profession_id');
+    }
+
+    public function setPasswordAttribute($input)
+    {
+        if ($input) {
+            $this->attributes['password'] = app('hash')->needsRehash($input) ? Hash::make($input) : $input;
+        }
+    }
+
+    public function getUKeyAttribute() 
+    {
+        return base64_encode($this->id);
     }
 }

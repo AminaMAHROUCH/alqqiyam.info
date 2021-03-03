@@ -29,7 +29,7 @@ class StoreUniteRegionalRequest extends FormRequest
                 'string',
                 'nullable',
             ],
-            'email_profesionel' => [
+            'email' => [
                 'required',
                 'unique:unite_regionals',
             ],

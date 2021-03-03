@@ -29,7 +29,7 @@ class StoreEtablissementRequest extends FormRequest
                 'string',
                 'nullable',
             ],
-            'email_professionel' => [
+            'email' => [
                 'required',
                 'unique:etablissements',
             ],

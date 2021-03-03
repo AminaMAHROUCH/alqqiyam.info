@@ -29,9 +29,9 @@ class UpdateEtablissementRequest extends FormRequest
                 'string',
                 'nullable',
             ],
-            'email_professionel' => [
+            'email' => [
                 'required',
-                'unique:etablissements,email_professionel,' . request()->route('etablissement')->id,
+                'unique:etablissements,email,' . request()->route('etablissement')->id,
             ],
         ];
     }
