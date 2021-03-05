@@ -59,4 +59,13 @@ class NationalPartner extends Model implements HasMedia
 
         return $file;
     }
+
+    public function getImagesUrlsAttribute()
+    {
+        $urls = null;
+            $urls = $this->image->getUrl();
+        
+
+        return $urls;
+    }
 }

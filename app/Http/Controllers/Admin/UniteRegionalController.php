@@ -9,6 +9,7 @@ use App\Http\Requests\StoreUniteRegionalRequest;
 use App\Http\Requests\UpdateUniteRegionalRequest;
 use App\Models\Province;
 use App\Models\Region;
+use App\Models\Profession;
 use App\Models\UniteRegional;
 use Gate;
 use Illuminate\Http\Request;

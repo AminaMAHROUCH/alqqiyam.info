@@ -5,7 +5,7 @@ namespace App\Http\Resources\Api\V1;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Helpers\Helper;
 
-class PublicNewsResource extends JsonResource
+class NationalPartnerResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,10 +17,8 @@ class PublicNewsResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'title' => $this->title,
-            'content' => $this->content,
-            'video' => $this->video,
-            'published_at' => Helper::formatDateP($this->published_at),
+            'nom' => $this->nom,
+            'description' => $this->description,
             'image' => $this->imagesUrls,
         ];
     }

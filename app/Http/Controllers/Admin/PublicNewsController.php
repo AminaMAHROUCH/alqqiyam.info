@@ -38,13 +38,13 @@ class PublicNewsController extends Controller
         $publicNews = PublicNews::create($request->all());
 
         foreach ($request->input('image', []) as $file) {
-            $publicNews->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('image');
+            $test=$publicNews->addMedia(storage_path('tmp/uploads/' . basename($file)))->toMediaCollection('image');
         }
-
+        dd($test);
         if ($media = $request->input('ck-media', false)) {
             Media::whereIn('id', $media)->update(['model_id' => $publicNews->id]);
         }
-
+        
         return redirect()->route('admin.public-news.index');
     }
 

@@ -99,6 +99,18 @@
                 <span class="help-block">{{ trans('cruds.uniteRegional.fields.province_helper') }}</span>
             </div>
             <div class="form-group">
+                <label for="profession_id">{{ trans('cruds.uniteRegional.fields.province') }}</label>
+                <select class="form-control select2 {{ $errors->has('profession') ? 'is-invalid' : '' }}" name="profession_id" id="profession_id">
+                    @foreach($provinces as $id => $profession)
+                        <option value="{{ $id }}" {{ old('profession_id') == $id ? 'selected' : '' }}>{{ $profession }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('province'))
+                    <span class="text-danger">{{ $errors->first('province') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.uniteRegional.fields.province_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label class="required" for="profession">{{ trans('cruds.uniteRegional.fields.profession') }}</label>
                 <input class="form-control {{ $errors->has('profession') ? 'is-invalid' : '' }}" type="text" name="profession" id="profession" value="{{ old('profession', '') }}" required>
                 @if($errors->has('profession'))

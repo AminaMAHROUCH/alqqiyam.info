@@ -59,8 +59,9 @@
                             </td>
                             <td>
                                 @foreach($publicNews->image as $key => $media)
-                                    <a href="{{ $media->getUrl() }}" target="_blank" style="display: inline-block">
-                                        <img src="{{ $media->getUrl('thumb') }}">
+                                    <a href="{{ $media->getUrl() }}" target="_blank" >
+                                        <img src="{{ $media->getUrl() }}" width="50px" height="50px">
+                                       
                                     </a>
                                 @endforeach
                             </td>

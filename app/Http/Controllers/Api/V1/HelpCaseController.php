@@ -19,10 +19,10 @@ class HelpCaseController extends Controller
 
     public function HelpList()
     {
-        $helpList = HelpCase::where('type', 'article')->get()->sortByDesc("id");
+        $articleList = HelpCase::where('type','article')->get()->sortByDesc("id");
 
         return response()->json([
-            'helpList' => HelpCaseResource::collection($helpList),
+            'articleList' => HelpCaseResource::collection($articleList),
         ], 200);
     }
 }

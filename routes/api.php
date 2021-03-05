@@ -29,5 +29,6 @@ Route::group([
     Route::get('/article', 'HelpCaseController@HelpList');
     Route::get('/case', 'HelpCaseController@CaseList');
     Route::get('/description', 'ServiceController@serviceDescription');
+    Route::get('/nationalPartner', 'NationalPartnerController@index');
+    Route::get('/region', 'RegionController@index');
 });
-
