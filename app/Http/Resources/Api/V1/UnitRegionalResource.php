@@ -14,7 +14,7 @@ class UnitRegionalResource extends JsonResource
      * @return array
      */
     public function toArray($request)
-    {
+    { 
         return [
             'id' => $this->id,
             'name_complet' => $this->name_complet,

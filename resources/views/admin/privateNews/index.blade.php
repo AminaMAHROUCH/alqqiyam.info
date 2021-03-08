@@ -35,9 +35,6 @@
                             {{ trans('cruds.privateNews.fields.image') }}
                         </th>
                         <th>
-                            {{ trans('cruds.privateNews.fields.video') }}
-                        </th>
-                        <th>
                             &nbsp;
                         </th>
                     </tr>
@@ -63,9 +60,6 @@
                                         <img src="{{ $media->getUrl('thumb') }}">
                                     </a>
                                 @endforeach
-                            </td>
-                            <td>
-                                {{ $privateNews->video ?? '' }}
                             </td>
                             <td>
                                 @can('private_news_show')

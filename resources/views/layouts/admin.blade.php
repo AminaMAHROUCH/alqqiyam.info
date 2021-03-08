@@ -32,14 +32,13 @@
             <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar" data-class="c-sidebar-show">
                 <i class="fas fa-fw fa-bars"></i>
             </button>
-
             <a class="c-header-brand d-lg-none" href="#">{{ trans('panel.site_title') }}</a>
 
             <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none" type="button" data-target="#sidebar" data-class="c-sidebar-lg-show" responsive="true">
                 <i class="fas fa-fw fa-bars"></i>
             </button>
 
-            <ul class="c-header-nav ml-auto">
+            <ul class="c-header-nav" style="padding-right: 85%">
                 @if(count(config('panel.available_languages', [])) > 1)
                     <li class="c-header-nav-item dropdown d-md-down-none">
                         <a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -52,8 +51,23 @@
                         </div>
                     </li>
                 @endif
-
-
+                    <li>
+                        <a href="#" data-toggle="dropdown"
+                            data-hover="dropdown" 
+                            data-close-others="true">
+                            <span>
+                                <b> {{ Auth::user()->name }}</b>
+                            </span>
+                        </a>
+                    </li>
+                    <li style="margin-right: 1rem;" >
+                        <form action="{{ route('logout') }}" method="post">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <a  type="submit" onclick="$(this).closest('form').submit()">
+                                    <i class="fa fa-sign-out" aria-hidden="true" style="transform: rotate(180deg);"></i>
+                                </a>
+                        </form>
+                        </li>
             </ul>
         </header>
 

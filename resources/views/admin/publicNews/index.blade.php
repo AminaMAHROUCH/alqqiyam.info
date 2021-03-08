@@ -35,9 +35,6 @@
                             {{ trans('cruds.publicNews.fields.image') }}
                         </th>
                         <th>
-                            {{ trans('cruds.publicNews.fields.video') }}
-                        </th>
-                        <th>
                             &nbsp;
                         </th>
                     </tr>
@@ -64,9 +61,6 @@
                                        
                                     </a>
                                 @endforeach
-                            </td>
-                            <td>
-                                {{ $publicNews->video ?? '' }}
                             </td>
                             <td>
                                 @can('public_news_show')

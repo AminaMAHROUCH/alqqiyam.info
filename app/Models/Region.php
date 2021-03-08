@@ -25,6 +25,11 @@ class Region extends Model
         'deleted_at',
     ];
 
+    public function uniteRegionals()
+    {
+        return $this->hasMany(UniteRegional::class, 'region_id');
+    }
+
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');

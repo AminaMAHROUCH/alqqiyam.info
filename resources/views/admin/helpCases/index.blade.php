@@ -31,9 +31,6 @@
                         <th>
                             {{ trans('cruds.helpCase.fields.image') }}
                         </th>
-                        <th>
-                            {{ trans('cruds.helpCase.fields.video') }}
-                        </th>
                          <th>
                             {{ trans('cruds.news.fields.type') }}
                         </th>
@@ -60,9 +57,6 @@
                                         <img src="{{ $media->getUrl('thumb') }}">
                                     </a>
                                 @endforeach
-                            </td>
-                            <td>
-                                {{ $helpCase->video ?? '' }}
                             </td>
                             <td>
                                 {{ App\Models\HelpCase::TYPE_SELECT[$helpCase->type] ?? '' }}

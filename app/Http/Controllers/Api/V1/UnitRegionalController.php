@@ -7,13 +7,13 @@ use App\Http\Resources\Api\V1\UnitRegionalResource;
 use App\Models\UniteRegional;
 
 class UnitRegionalController extends Controller
-{
+{ 
     public function index()
     {
-        $region = UniteRegional::all();
+        $unitRegion = UniteRegional::all();
 
         return response()->json([
-            'region' => UnitRegionalResource::collection($region),
+            'unitRegion' => UnitRegionalResource::collection($unitRegion),
         ], 200);
     }
-}
+} 
