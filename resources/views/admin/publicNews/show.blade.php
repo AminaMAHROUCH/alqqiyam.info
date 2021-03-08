@@ -64,7 +64,7 @@
                             {{ trans('cruds.publicNews.fields.video') }}
                         </th>
                         <td>
-                            {{ $publicNews->video }}
+                            {!! $publicNews->video !!}
                         </td>
                     </tr>
                 </tbody>
