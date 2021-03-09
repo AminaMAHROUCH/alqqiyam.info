@@ -41,6 +41,7 @@ class UniteRegional extends Model implements HasMedia
         'password',
         'region_id',
         'province_id',
+        'profession_id',
         'fix',
         'created_at',
         'updated_at',

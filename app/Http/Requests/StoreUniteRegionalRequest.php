@@ -39,8 +39,7 @@ class StoreUniteRegionalRequest extends FormRequest
             'image'             => [
                 'required',
             ],
-            'profession'        => [
-                'string',
+            'profession_id'     => [
                 'required',
             ],
         ];

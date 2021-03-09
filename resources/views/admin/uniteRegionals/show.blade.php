@@ -112,7 +112,7 @@
                             {{ trans('cruds.uniteRegional.fields.profession') }}
                         </th>
                         <td>
-                            {{ $uniteRegional->profession }}
+                        {{ $uniteRegional->profession->title ?? '' }}
                         </td>
                     </tr>
                 </tbody>

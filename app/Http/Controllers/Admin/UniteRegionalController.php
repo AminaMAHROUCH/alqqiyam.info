@@ -39,13 +39,13 @@ class UniteRegionalController extends Controller
 
         $provinces = Province::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.uniteRegionals.create', compact('regions', 'provinces'));
+        return view('admin.uniteRegionals.create', compact('regions', 'provinces', 'professions'));
     }
 
     public function store(StoreUniteRegionalRequest $request)
     {
         $uniteRegional = UniteRegional::create($request->all());
-
+        
         if ($request->input('image', false)) {
             $uniteRegional->addMedia(storage_path('tmp/uploads/' . $request->input('image')))->toMediaCollection('image');
         }
@@ -126,5 +126,11 @@ class UniteRegionalController extends Controller
         $media         = $model->addMediaFromRequest('upload')->toMediaCollection('ck-media');
 
         return response()->json(['id' => $media->id, 'url' => $media->getUrl()], Response::HTTP_CREATED);
+    }
+
+    public function dropdownProvince(Request $request)
+    {
+        $province = Province::where('region_id', $request->id)->get();
+        return  response()->json($province);
     }
 }

@@ -98,7 +98,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('unite-regionals/destroy', 'UniteRegionalController@massDestroy')->name('unite-regionals.massDestroy');
     Route::post('unite-regionals/media', 'UniteRegionalController@storeMedia')->name('unite-regionals.storeMedia');
     Route::post('unite-regionals/ckmedia', 'UniteRegionalController@storeCKEditorImages')->name('unite-regionals.storeCKEditorImages');
-    Route::resource('unite-regionals', 'UniteRegionalController');
+    Route::get('unite-regionals/dropdownprovince', 'UniteRegionalController@dropdownProvince')->name('dropdownprovince');
+    Route::resource('unite-regionals', 'UniteRegionalController');   
 
     // Questions
     Route::delete('questions/destroy', 'QuestionController@massDestroy')->name('questions.massDestroy');
@@ -112,6 +113,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('unit-details/ckmedia', 'UnitDetailsController@storeCKEditorImages')->name('unit-details.storeCKEditorImages');
     Route::resource('unit-details', 'UnitDetailsController');
 });
+
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password
     if (file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php'))) {

@@ -83,7 +83,7 @@
                                 {{ $uniteRegional->province->name ?? '' }}
                             </td>
                             <td>
-                                {{ $uniteRegional->profession ?? '' }}
+                                {{ $uniteRegional->profession->title ?? '' }}
                             </td>
                             <td>
                                 @can('unite_regional_show')

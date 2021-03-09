@@ -88,10 +88,8 @@
             </div>
             <div class="form-group">
                 <label for="province_id">{{ trans('cruds.uniteRegional.fields.province') }}</label>
-                <select class="form-control select2 {{ $errors->has('province') ? 'is-invalid' : '' }}" name="province_id" id="province_id">
-                    @foreach($provinces as $id => $province)
-                        <option value="{{ $id }}" {{ old('province_id') == $id ? 'selected' : '' }}>{{ $province }}</option>
-                    @endforeach
+                <select name="province_id" id="province_id"  class="form-control ">
+                    <option selected disabled>select</option> 
                 </select>
                 @if($errors->has('province'))
                     <span class="text-danger">{{ $errors->first('province') }}</span>
@@ -99,24 +97,16 @@
                 <span class="help-block">{{ trans('cruds.uniteRegional.fields.province_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="profession_id">{{ trans('cruds.uniteRegional.fields.province') }}</label>
+                <label for="profession_id">{{ trans('cruds.uniteRegional.fields.profession') }}</label>
                 <select class="form-control select2 {{ $errors->has('profession') ? 'is-invalid' : '' }}" name="profession_id" id="profession_id">
-                    @foreach($provinces as $id => $profession)
+                    @foreach($professions as $id => $profession)
                         <option value="{{ $id }}" {{ old('profession_id') == $id ? 'selected' : '' }}>{{ $profession }}</option>
                     @endforeach
                 </select>
                 @if($errors->has('province'))
-                    <span class="text-danger">{{ $errors->first('province') }}</span>
-                @endif
-                <span class="help-block">{{ trans('cruds.uniteRegional.fields.province_helper') }}</span>
-            </div>
-            <div class="form-group">
-                <label class="required" for="profession">{{ trans('cruds.uniteRegional.fields.profession') }}</label>
-                <input class="form-control {{ $errors->has('profession') ? 'is-invalid' : '' }}" type="text" name="profession" id="profession" value="{{ old('profession', '') }}" required>
-                @if($errors->has('profession'))
                     <span class="text-danger">{{ $errors->first('profession') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.uniteRegional.fields.profession_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.uniteRegional.fields.province_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
@@ -186,4 +176,24 @@
     }
 }
 </script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajaxSetup({
+        head: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+        });
+        $('#region_id').on('change',function(){
+        id= $(this).val();
+        $.get('dropdownprovince', {id:id}, function(data){
+                $('#province_id').html('');
+                $.each(data, function(key,val){
+                $('#province_id').append('<option value='+val.id+' >'+val.name+'</option>')
+                });
+            });
+        });
+    });
+   
+ </script>
 @endsection
