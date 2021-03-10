@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Api\V1\RegionResource;
 use App\Http\Resources\Api\V1\UnitRegionalResource;
+use App\Http\Resources\Api\V1\ProvinceResource;
 use App\Models\Region;
 
 class RegionController extends Controller
@@ -25,6 +26,16 @@ class RegionController extends Controller
 
         return response()->json([
             'uniteRegionals' => UnitRegionalResource::collection($uniteRegionals),
+        ], 200);
+    }
+
+        public function province($regionId)
+    {
+        $region = Region::findOrFail($regionId);
+        $provinces = $region->provinces;
+
+        return response()->json([
+            'provinces' => ProvinceResource::collection($provinces),
         ], 200);
     }
 }

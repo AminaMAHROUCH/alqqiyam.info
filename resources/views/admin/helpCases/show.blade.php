@@ -64,7 +64,7 @@
                             {{ trans('cruds.news.fields.type') }}
                         </th>
                         <td>
-                            {{ App\Models\News::TYPE_SELECT[$news->type] ?? '' }}
+                            {{ App\Models\News::TYPE_SELECT[$helpCase->type] ?? '' }}
                         </td>
                     </tr>
                 </tbody>

@@ -32,5 +32,6 @@ Route::group([
     Route::get('/nationalPartner', 'NationalPartnerController@index');
     Route::get('/region', 'RegionController@index');
     Route::get('/region/{regionId}/uniteRegionals', 'RegionController@uniteRegionals');
+    Route::get('/region/{regionId}/provinces', 'RegionController@province');
     Route::get('/unitRegion', 'UnitRegionalController@index');
 });
