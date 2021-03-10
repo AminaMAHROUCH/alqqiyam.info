@@ -21,7 +21,7 @@ class PublicNewsResource extends JsonResource
             'content' => $this->content,
             'video' => $this->video,
             'published_at' => Helper::formatDateP($this->published_at),
-            'image' => $this->imagesUrls,
+            'images' => $this->imagesUrls,
         ];
     }
 }
