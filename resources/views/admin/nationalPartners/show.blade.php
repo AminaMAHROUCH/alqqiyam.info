@@ -48,7 +48,7 @@
                             {{ trans('cruds.nationalPartner.fields.description') }}
                         </th>
                         <td>
-                            {{ $nationalPartner->description }}
+                            {!! $nationalPartner->description !!}
                         </td>
                     </tr>
                     <tr>
