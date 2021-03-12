@@ -30,6 +30,11 @@ class Region extends Model
         return $this->hasMany(UniteRegional::class, 'region_id');
     }
 
+    public function partnersRegionals()
+    {
+        return $this->hasMany(ProvincePartner::class, 'region_id');
+    }
+
     public function provinces()
     {
         return $this->hasMany(Province::class, 'region_id');

@@ -69,4 +69,14 @@ class PrivateNews extends Model implements HasMedia
 
         return $files;
     }
+
+    public function getImagesUrlsAttribute()
+    {
+        $urls = [];
+        foreach ($this->image as $image) {
+            $urls[] = asset($image->getUrl());
+        }
+
+        return $urls;
+    }
 }

@@ -47,7 +47,7 @@
                             {{ trans('cruds.provincePartner.fields.tel_2') }}
                         </th>
                         <th>
-                            {{ trans('cruds.provincePartner.fields.province') }}
+                            {{ trans('cruds.provincePartner.fields.region') }}
                         </th>
                         <th>
                             &nbsp;
@@ -89,7 +89,7 @@
                                 {{ $provincePartner->tel_2 ?? '' }}
                             </td>
                             <td>
-                                {{ $provincePartner->province->name ?? '' }}
+                                {{ $provincePartner->region->name ?? '' }}
                             </td>
                             <td>
                                 @can('province_partner_show')

@@ -39,7 +39,7 @@ class UpdateProvincePartnerRequest extends FormRequest
                 'string',
                 'required',
             ],
-            'province_id' => [
+            'region_id' => [
                 'required',
                 'integer',
             ],

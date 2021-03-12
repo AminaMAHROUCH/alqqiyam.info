@@ -20,6 +20,7 @@ Route::group([
 ], function ($router) {
     Route::get('/privateNews', 'PrivateNewsController@index');
     Route::get('/procedure', 'ServiceController@serviceProcedure');
+
 });
 Route::group([
     'prefix' => 'v1',
@@ -34,4 +35,7 @@ Route::group([
     Route::get('/region/{regionId}/uniteRegionals', 'RegionController@uniteRegionals');
     Route::get('/region/{regionId}/provinces', 'RegionController@province');
     Route::get('/unitRegion', 'UnitRegionalController@index');
+    Route::get('/link', 'LinkController@index');
+        Route::get('/region/{regionId}/PartnersRegionals', 'RegionController@PartnersRegionals');
+
 });

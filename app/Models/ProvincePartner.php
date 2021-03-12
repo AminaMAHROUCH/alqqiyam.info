@@ -33,7 +33,7 @@ class ProvincePartner extends Model implements HasMedia
         'responsable',
         'email',
         'tel_2',
-        'province_id',
+        'region_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -63,8 +63,8 @@ class ProvincePartner extends Model implements HasMedia
         return $file;
     }
 
-    public function province()
+    public function region()
     {
-        return $this->belongsTo(Province::class, 'province_id');
+        return $this->belongsTo(Region::class, 'region_id');
     }
 }

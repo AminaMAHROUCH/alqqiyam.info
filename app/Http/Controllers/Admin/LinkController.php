@@ -18,10 +18,6 @@ class LinkController extends Controller
         abort_if(Gate::denies('link_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $links = Link::all();
-        $test= $links[0]->id;
-        if( $test == 1){
-            return 'hello';
-        }
 
         return view('admin.links.index', compact('links'));
     }
