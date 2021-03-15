@@ -24,6 +24,7 @@ class RegionalPartnerResource extends JsonResource
             'responsable' => $this->responsable,
             'email' => $this->email,
             'tel_2' => $this->tel_2,
+            'region_id' => $this->region()->select('id', 'name')->get(),
             'image' => $this->imagesUrls,
         ];
     }

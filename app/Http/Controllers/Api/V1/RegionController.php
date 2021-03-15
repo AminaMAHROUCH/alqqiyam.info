@@ -39,7 +39,7 @@ class RegionController extends Controller
         ], 200);
     }
 
-    public function PartnersRegionals($regionId)
+    public function partnersRegionals($regionId)
     {
         $region = Region::findOrFail($regionId);
         $partnersRegionals = $region->partnersRegionals;
