@@ -98,4 +98,13 @@ class UniteRegional extends Model implements HasMedia
     {
         return base64_encode($this->id);
     }
+    
+    public function getImagesUrlsAttribute()
+    {
+        $urls = null;
+            $urls = $this->image->getUrl();
+        
+
+        return $urls;
+    }
 }

@@ -67,4 +67,13 @@ class ProvincePartner extends Model implements HasMedia
     {
         return $this->belongsTo(Region::class, 'region_id');
     }
+
+    public function getImagesUrlsAttribute()
+    {
+        $urls = null;
+            $urls = $this->image->getUrl();
+        
+
+        return $urls;
+    }
 }

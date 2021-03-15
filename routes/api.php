@@ -19,7 +19,6 @@ Route::group([
     'middleware' => 'api_mobile',
 ], function ($router) {
     Route::get('/privateNews', 'PrivateNewsController@index');
-    Route::get('/procedure', 'ServiceController@serviceProcedure');
 });
 Route::group([
     'prefix' => 'v1',
@@ -36,5 +35,7 @@ Route::group([
     Route::get('/unitRegion', 'UnitRegionalController@index');
     Route::get('/link', 'LinkController@index');
     Route::get('/region/{regionId}/partners', 'RegionController@partnersRegionals');
+    Route::get('/procedure', 'ServiceController@serviceProcedure');
+
 
 });
